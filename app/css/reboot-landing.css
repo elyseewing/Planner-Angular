@@ -555,6 +555,18 @@ div.home_intro {
 	color: #81994D;
 }
 
+.simple_info {
+    margin: 20px 0 20px 0;
+}
+.simple_info h2 {
+    margin: 0;
+    padding: 0 0 5px 0;
+}
+.simple_info p {
+    margin: 0;
+    padding: 0;
+}
+
 /*------------------------------------------------------------------
 [*. Bootstrap Overrides]
 */

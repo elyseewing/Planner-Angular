@@ -1,0 +1,17 @@
+[
+    {
+        "id": "1",
+        "name": "Photography",
+        "description": "Notes about the photography"
+    },
+    {
+        "id": "2",
+        "name": "Food and drink",
+        "description": "Notes about the delicious stuff"
+    },
+    {
+        "id": "3",
+        "name": "Music",
+        "description": "Notes about the music/DJ"
+    }
+]

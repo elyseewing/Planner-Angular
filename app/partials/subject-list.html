@@ -1,0 +1,15 @@
+<div style="margin-bottom: 25px;">
+Sort by:
+<select ng-model="orderProp">
+    <option value="name">Alphabetical</option>
+    <option value="date">Most recent</option>
+</select>
+</div>
+
+<div class="subject" ng-repeat="subject in subjects | filter:query | orderBy:orderProp">
+    <a href="#/subjects/{{subject.id}}">
+        <div>
+            <h3>{{ subject.name }}</h3>
+        </div>
+    </a>
+</div>
