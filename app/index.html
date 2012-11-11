@@ -1,19 +1,92 @@
 <!doctype html>
 <html lang="en" ng-app="myApp">
 <head>
-  <meta charset="utf-8">
-  <title>My AngularJS App</title>
-  <link rel="stylesheet" href="css/app.css"/>
+    <meta charset="utf-8">
+    <title>My Epic Planner</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.css" rel="stylesheet">
+
+    <link href="css/reboot-landing.css" rel="stylesheet">
+    <link href="css/reboot-landing-responsive.css" rel="stylesheet">
+
+
+    <link href="css/plans.css" rel="stylesheet">
+    <link href="css/themes/green/theme.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="#/home" style="padding-left: 0px">
+                    <img src="img/hand-and-pen.png" height="50px" />
+                    <span class="home_link">My Epic Planner</span>
+                </a>
+                <div class="nav-collapse">
+                    <ul class="nav pull-right" style="margin-top: 25px">
+                        <li><a href="#/home">Home</a></li>
+                        <li><a href="#/signup">Sign up</a></li>
+                        <li><a href="#/login">Log in</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <div ng-view></div>
+    <div id="subheader">
+        <div class="inner">
+            <div class="container">
+                <h1>ANGULAR ROCKS</h1>
+            </div>
+        </div>
+    </div>
 
-  <div>Angular seed app: v<span app-version></span></div>
+    <div id="subpage">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <div ng-view></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="extra">
+        <div class="inner">
+            <div class="container">
+                <div class="row">
+                    <div class="span4" style="width: 500px">
+                        <h3 style="margin-bottom: 0.5em">
+                            <span class="slash">//</span>
+                            Quick Links
+                        </h3>
+                        <ul class="footer-links clearfix">
+                            <li><a href="#/home">Home</a></li>
+                            <li><a href="#/about">About</a></li>
+                            <li><a href="#/contact">Contact</a></li>
+                            <li>&copy; 2012</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
