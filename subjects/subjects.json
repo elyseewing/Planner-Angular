@@ -2,16 +2,22 @@
     {
         "id": "1",
         "name": "Photography",
-        "description": "Notes about the photography"
+        "description": "Notes about the photography",
+        "date_added": "2012-10-31 10:09:00",
+        "date_updated": "2012-10-31 12:14:00"
     },
     {
         "id": "2",
         "name": "Food and drink",
-        "description": "Notes about the delicious stuff"
+        "description": "Notes about the delicious stuff",
+        "date_added": "2012-08-12 14:37:00",
+        "date_updated": "2012-11-02 15:16:00"
     },
     {
         "id": "3",
         "name": "Music",
-        "description": "Notes about the music/DJ"
+        "description": "Notes about the music/DJ",
+        "date_added": "2012-11-09 09:12:00",
+        "date_updated": "2012-11-10 21:21:00"
     }
 ]
