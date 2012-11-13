@@ -8,7 +8,11 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives'])
     $routeProvider.when('/subjects', {templateUrl: 'partials/subject-list.html', controller: SubjectListCtrl});
     $routeProvider.when('/subjects/:subjectId', {templateUrl: 'partials/subject-detail.html', controller: SubjectDetailCtrl});
     $routeProvider.when('/items/:itemId', {templateUrl: 'partials/item-detail.html', controller: ItemDetailCtrl});
-    //$routeProvider.when('/items/:itemId/edit', {templateUrl: 'partials/item-edit.html', controller: ItemEditCtrl});
+    $routeProvider.when('/items/new/:subjectId', {templateUrl: 'partials/item-new.html', controller: ItemNewCtrl});
+    $routeProvider.when('/items/:itemId/edit', {templateUrl: 'partials/item-edit.html', controller: ItemDetailCtrl});
+    $routeProvider.when('/items/:itemId/edit', {templateUrl: 'partials/item-edit.html', controller: ItemDetailCtrl});
+    $routeProvider.when('/lists/:listId/edit', {templateUrl: 'partials/list-edit.html', controller: ListDetailCtrl});
+    $routeProvider.when('/todos/:todoId/edit', {templateUrl: 'partials/todo-edit.html', controller: TodoDetailCtrl});
     $routeProvider.when('/about', {templateUrl: 'partials/about.html'});
     $routeProvider.when('/contact', {templateUrl: 'partials/contact.html'});
     $routeProvider.when('/home', {templateUrl: 'partials/home.html'});

@@ -1,42 +1,68 @@
-<div class="form">
-    <form>
-        <div class="clearfix">
-            <label for="item_type"><span>What should this be?</span></label>
-            <div class="input">
-                <select id="item_type" ng-model="item.item_type">
-                    <option value="Document">Document</option>
-                    <option value="List">List</option>
-                    <option value="Picture">Picture</option>
-                    <option value="To-Do List">To-Do List</option>
-                </select>
-            </div>
+<div id="subheader">
+    <div class="inner">
+        <div class="container">
+            <h1 class="crumbs">
+                <a href="#/subjects">My Boards</a>
+            </h1>
+            <h1 class="crumbs"> << </h1>
+            <h1 class="crumbs">
+                <a href="#/subjects/{{ item.subject.id }}">{{ item.subject.name }}</a>
+            </h1>
+            <h1 class="crumbs"> << </h1>
+            <h1 class="crumbs">
+                <a href="#/subjects/{{ item.id }}">{{ item.name }}</a>
+            </h1>
         </div>
-        <div class="clearfix">
-            <label for="name"><span>Name</span></label>
-            <div class="input">
-                <input type="text" ng-model="item.name" id="name" />
-            </div>
-        </div>
-        <div class="clearfix">
-            <label for="description"><span>Description</span></label>
-            <div class="input">
-                <input type="text" ng-model="item.description" id="description" />
-            </div>
-        </div>
-        <div class="form_field" id="files" style="display: block;">
-            <label for="file"><span>Upload from your computer</span></label>
-            <div class="input">
-                <input type="file" ng-model="item.file" id="file" />
-            </div>
+    </div>
+</div>
 
-            <label for="image_url"><span>Upload from URL</span></label>
-            <div class="input">
-                <input type="text" ng-model="item.image_url" id="image_url" />
+<div id="subpage">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="form">
+                    <form>
+                        <div class="clearfix">
+                            <label for="item_type"><span>What should this be?</span></label>
+                            <div class="input">
+                                <select id="item_type" ng-model="item.item_type">
+                                    <option value="Document">Document</option>
+                                    <option value="List">List</option>
+                                    <option value="Picture">Picture</option>
+                                    <option value="To-Do List">To-Do List</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                            <label for="name"><span>Name</span></label>
+                            <div class="input">
+                                <input type="text" ng-model="item.name" id="name" />
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                            <label for="description"><span>Description</span></label>
+                            <div class="input">
+                                <input type="text" ng-model="item.description" id="description" />
+                            </div>
+                        </div>
+                        <div class="form_field" id="files" style="display: block;">
+                            <label for="file"><span>Upload from your computer</span></label>
+                            <div class="input">
+                                <input type="file" ng-model="item.file" id="file" />
+                            </div>
+
+                            <label for="image_url"><span>Upload from URL</span></label>
+                            <div class="input">
+                                <input type="text" ng-model="item.image_url" id="image_url" />
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <input type="submit" value="Let's go!" ng-click="save()" class="btn btn-primary btn-large" />
+                        </div>
+                        <input type="hidden" id="subject_id" ng-model="item.subject_id" value="{{ item.subject_id }}" />
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="actions">
-            <input type="submit" value="Let's go!" ng-click="save()" class="btn btn-primary btn-large" />
-        </div>
-        <input type="hidden" id="subject_id" ng-model="item.subject_id" value="{{ item.subject_id }}" />
-    </form>
+    </div>
 </div>

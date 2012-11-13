@@ -1,0 +1,51 @@
+<div id="subheader">
+    <div class="inner">
+        <div class="container">
+            <h1 class="crumbs">
+                <a href="#/subjects">My Boards</a>
+            </h1>
+            <h1 class="crumbs"> << </h1>
+            <h1 class="crumbs">
+                <a href="#/subjects/{{ todo.item.subject.id }}">{{ todo.item.subject.name }}</a>
+            </h1>
+            <h1 class="crumbs"> << </h1>
+            <h1 class="crumbs">
+                <a href="#/items/{{ todo.item.id }}">{{ todo.item.name }}</a>
+            </h1>
+        </div>
+    </div>
+</div>
+
+<div id="subpage">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <button ng-click="remove()" class="btn btn-danger" onclick="return confirm('Are you sure?');">Remove</button>
+                <div class="notice">
+
+                </div>
+                <div class="form">
+                    <form>
+                        <div class="clearfix">
+                            <label for="name"><span>Name</span></label>
+                            <div class="input">
+                                <input type="text" ng-model="todo.name" id="name" />
+                            </div>
+                        </div>
+
+                        <div class="clearfix">
+                            <label for="notes"><span>Notes, links, etc.</span></label>
+                            <div class="input">
+                                <textarea ng-model="todo.notes" id="notes"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="actions">
+                            <button ng-click="save()" class="btn btn-primary btn-large">Let's go!</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

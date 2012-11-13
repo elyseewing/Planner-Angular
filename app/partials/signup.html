@@ -1,36 +1,51 @@
-<div class="notice">
-
+<div id="subheader">
+    <div class="inner">
+        <div class="container">
+            <h1 class="crumbs">
+                <a href="#/signup">Sign up</a>
+            </h1>
+        </div>
+    </div>
 </div>
-<div class="form">
-    <fieldset>
-        <form>
-            <div class="clearfix">
-                <label for="email"><span>Email</span></label>
-                <div class="input">
-                    <input type="text" ng-model="user.email" id="email" />
+
+<div id="subpage">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="form">
+                    <fieldset>
+                        <form>
+                            <div class="clearfix">
+                                <label for="email"><span>Email</span></label>
+                                <div class="input">
+                                    <input type="text" ng-model="user.email" id="email" />
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                                <label for="name"><span>Name</span></label>
+                                <div class="input">
+                                    <input type="text" ng-model="user.name" id="name" />
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                                <label for="password"><span>Password</span></label>
+                                <div class="input">
+                                    <input type="password" ng-model="user.password" id="password" />
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                                <label for="password_confirmation"><span>Password confirmation</span></label>
+                                <div class="input">
+                                    <input type="password" ng-model="user.password_confirmation" id="password_confirmation" />
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <input type="submit" ng-click="save()" value="Let's go!" class="btn btn-primary btn-large" />
+                            </div>
+                        </form>
+                    </fieldset>
                 </div>
             </div>
-            <div class="clearfix">
-                <label for="name"><span>Name</span></label>
-                <div class="input">
-                    <input type="text" ng-model="user.name" id="name" />
-                </div>
-            </div>
-            <div class="clearfix">
-                <label for="password"><span>Password</span></label>
-                <div class="input">
-                    <input type="password" ng-model="user.password" id="password" />
-                </div>
-            </div>
-            <div class="clearfix">
-                <label for="password_confirmation"><span>Password confirmation</span></label>
-                <div class="input">
-                    <input type="password" ng-model="user.password_confirmation" id="password_confirmation" />
-                </div>
-            </div>
-            <div class="actions">
-                <input type="submit" ng-click="save()" value="Let's go!" class="btn btn-primary btn-large" />
-            </div>
-        </form>
-    </fieldset>
+        </div>
+    </div>
 </div>

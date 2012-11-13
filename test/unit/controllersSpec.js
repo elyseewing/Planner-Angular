@@ -2,30 +2,56 @@
 
 /* jasmine specs for controllers go here */
 
-describe('MyCtrl1', function(){
-  var myCtrl1;
+describe('Planner controllers', function() {
 
-  beforeEach(function(){
-    myCtrl1 = new MyCtrl1();
-  });
+    describe('SignupCtrl', function(){
+      var ctrl;
+      beforeEach(function(){
+          ctrl = new SignupCtrl();
+      });
+      it('should ....', function() {
+        //spec body
+      });
+    });
 
+    describe('LoginCtrl', function(){
+      var LoginCtrl;
+      beforeEach(function(){
+          LoginCtrl = new LoginCtrl();
+      });
+      it('should ....', function() {
+        //spec body
+      });
+    });
 
-  it('should ....', function() {
-    //spec body
-  });
-});
+    describe('SubjectListCtrl', function(){
+        var SubjectListCtrl;
+        beforeEach(function(){
+            SubjectListCtrl = new SubjectListCtrl();
+        });
+        it('should ....', function() {
+            //spec body
+        });
+    });
 
+    describe('SubjectDetailCtrl', function(){
+        var SubjectDetailCtrl;
+        beforeEach(function(){
+            SubjectDetailCtrl = new SubjectDetailCtrl();
+        });
+        it('should ....', function() {
+            //spec body
+        });
+    });
 
-describe('MyCtrl2', function(){
-  var myCtrl2;
+    describe('ItemDetailCtrl', function(){
+        var ItemDetailCtrl;
+        beforeEach(function(){
+            ItemDetailCtrl = new ItemDetailCtrl();
+        });
+        it('should ....', function() {
+            //spec body
+        });
+    });
 
-
-  beforeEach(function(){
-    myCtrl2 = new MyCtrl2();
-  });
-
-
-  it('should ....', function() {
-    //spec body
-  });
 });

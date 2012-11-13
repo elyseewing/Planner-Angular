@@ -1,19 +1,52 @@
-<div class="top_header">
-    <div class="add_links">
-        <button class="btn btn-primary btn-large">Add something!</button>
+<div id="subheader">
+    <div class="inner">
+        <div class="container">
+            <h1 class="crumbs">
+                <a href="#/subjects">My Boards</a>
+            </h1>
+            <h1 class="crumbs"> << </h1>
+            <h1 class="crumbs">
+                <a href="#/subjects/{{ subject.id }}">{{ subject.name }}</a>
+            </h1>
+        </div>
     </div>
 </div>
 
-<div class="simple_info">
-    <h2>{{subject.name}}</h2>
-    <p>{{subject.description}}</p>
-</div>
+<div id="subpage">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="top_header">
+                    <div class="add_links">
+                        <a href="#/items/new/{{ subject.id }}"><button class="btn btn-primary btn-large">Add something!</button></a>
+                    </div>
+                </div>
 
-<div class="subject" ng-repeat="item in subject.items">
-    <a href="#/items/{{item.id}}">
-        <div>
-            <h3>{{ item.name }}</h3>
-            <p class="sub_desc">{{ item.item_type }}</p>
+                <div class="simple_info">
+                    <p>{{subject.description}}</p>
+                </div>
+
+                <div class="subject" ng-repeat="item in subject.items">
+                    <a href="#/items/{{ item.item.id }}">
+                        <div>
+                            <h3>{{ item.item.name }}</h3>
+                            <div ng-class="{true: 'item_icon_show', false: 'item_icon_hide'}[item.item.item_type == 'Document']">
+                                <img src="/app/img/Document.png" height="125px" />
+                            </div>
+                            <div ng-class="{true: 'item_icon_show', false: 'item_icon_hide'}[item.item.item_type == 'List']">
+                                <img src="/app/img/Clipboard.png" height="125px" />
+                            </div>
+                            <div ng-class="{true: 'item_icon_show', false: 'item_icon_hide'}[item.item.item_type == 'To-Do List']">
+                                <img src="/app/img/Checklist.png" height="125px" />
+                            </div>
+                            <div ng-class="{true: 'item_icon_show', false: 'item_icon_hide'}[item.item.item_type == 'Picture']">
+                                <img src="{{ item.item.url_small }}" height="125px" />
+                            </div>
+                            <p class="sub_desc">{{ item.item.item_type }}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
-    </a>
+    </div>
 </div>

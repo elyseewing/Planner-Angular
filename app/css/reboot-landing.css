@@ -77,6 +77,13 @@ a:hover {
     cursor: pointer;
 }
 
+.display_inline {
+    display: inline;
+}
+.display_none {
+    display: none;
+}
+
 /*------------------------------------------------------------------
 [2. Navbar / .navbar]
 */
@@ -214,7 +221,7 @@ a:hover {
 
 .subject {
     min-height: 200px;
-    width: 150px;
+    width: 200px;
     padding: 10px;
     text-align: center;
     margin-right: 20px;
@@ -226,6 +233,12 @@ a:hover {
 }
 .subject:hover {
     border: 2px solid #000000;
+}
+.subject h3 {
+    margin: 0 0 10px 0;
+}
+.subject p {
+    margin: 10px 0 0 0;
 }
 
 h3.middle_emphasis {
@@ -607,7 +620,6 @@ div.home_intro {
     margin: 0 0 25px 0;
 }
 .item_show li {
-    display: inline;
     margin-right: 18px;
 }
 .item_show input[type="text"] {
@@ -624,4 +636,24 @@ div.home_intro {
 }
 .item_show_block {
     display: block;
+}
+
+h1.crumbs {
+    float: left;
+    margin-right: 15px;
+    color: #ffffff;
+}
+h1.crumbs a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.item_icon {
+    text-align: center;
+}
+.item_icon_show {
+    display: inline;
+}
+.item_icon_hide {
+    display: none;
 }

@@ -1,14 +1,32 @@
-<div class="top_form">
-    <form>
-        <input type="text" id="name" ng-model="subject.name" placeholder="New subject" />
-        <button id="add_subject" ng-click="save()" class="btn btn-primary">Add it!</button>
-    </form>
+<div id="subheader">
+    <div class="inner">
+        <div class="container">
+            <h1 class="crumbs">
+                <a href="#/subjects">My Boards</a>
+            </h1>
+        </div>
+    </div>
 </div>
 
-<div class="subject" ng-repeat="subject in subjects | filter:query | orderBy:orderProp">
-    <a href="#/subjects/{{subject.id}}">
-        <div>
-            <h3>{{ subject.name }}</h3>
+<div id="subpage">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="top_form">
+                    <form>
+                        <input type="text" id="name" ng-model="subject.name" placeholder="New subject" />
+                        <button id="add_subject" ng-click="save()" class="btn btn-primary">Add it!</button>
+                    </form>
+                </div>
+
+                <div class="subject" ng-repeat="subject in subjects | filter:query | orderBy:orderProp">
+                    <a href="#/subjects/{{subject.id}}">
+                        <div>
+                            <h3>{{ subject.name }}</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
-    </a>
+    </div>
 </div>
