@@ -619,3 +619,9 @@ div.home_intro {
     height: 18px;
     margin: 0 15px 0 0;
 }
+.item_show_hidden {
+    display: none;
+}
+.item_show_block {
+    display: block;
+}
