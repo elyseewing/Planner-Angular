@@ -290,6 +290,12 @@ div.home_intro {
     vertical-align: top;
 }
 
+.top_form button {
+    margin-left: 15px;
+    position: relative;
+    top: -5px;
+}
+
 /*------------------------------------------------------------------
 [5. Screenshots / #screenshots]
 */	
@@ -595,4 +601,21 @@ div.home_intro {
 
 .btn {
 	border-radius: 0 \0/;
+}
+
+.item_show ul {
+    margin: 0 0 25px 0;
+}
+.item_show li {
+    display: inline;
+    margin-right: 18px;
+}
+.item_show input[type="text"] {
+    width: 250px;
+    margin: 0 15px 0 0;
+}
+.item_show textarea {
+    width: 250px;
+    height: 18px;
+    margin: 0 15px 0 0;
 }

@@ -7,17 +7,17 @@
             <div class="clearfix">
                 <label for="email"><span>Email</span></label>
                 <div class="input">
-                    <input type="text" id="email" />
+                    <input type="text" ng-model="user.username" id="email" />
                 </div>
             </div>
             <div class="clearfix">
                 <label for="password"><span>Password</span></label>
                 <div class="input">
-                    <input type="password" id="password" />
+                    <input type="password" ng-model="user.password" id="password" />
                 </div>
             </div>
             <div class="actions">
-                <input type="submit" value="Let's go!" class="btn btn-primary btn-large" />
+                <input type="submit" value="Let's go!" ng-click="save()" class="btn btn-primary btn-large" />
             </div>
         </form>
     </fieldset>

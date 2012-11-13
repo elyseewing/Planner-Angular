@@ -1,0 +1,48 @@
+<div class="item_show">
+    <p class="description">{{ item.description }}</p>
+    <ul>
+        <li><a href="#/items/edit/{{item.id}}"><button class="btn btn-primary">Edit</button></a></li>
+        <li><a href="#/items/remove/{{item.id}}" onclick="return confirm('Are you sure?');"><button class="btn btn-primary">Remove</button></a></li>
+        <li><a href="#"><button class="btn btn-primary">Download</button></a></li>
+        <li><a href="#/items/print/{{item.id}}"><button class="btn btn-primary">Print</button></a></li>
+    </ul>
+
+    <div class="top_line_form">
+        <form>
+            <input type="text" ng-model="list.name" id="list_name" placeholder="New list item" class="input_list_name" />
+            <textarea ng-model="list.notes" id="list_notes" placeholder="New list item notes, links, etc." class="input_list_notes"></textarea>
+            <input type="submit" ng-click="list-save()" value="Add it!" class="btn btn-primary input_submit" />
+            <input type="hidden" ng-model="list.item_id" id="list_item_id" />
+        </form>
+    </div>
+
+    <ul class="fancy_list">
+        <li ng-repeat="list in item.lists">
+            <span class="item_header"><a href="#/lists/{{list.id}}/edit">{{ list.name }}</a></span>
+            <br />
+            <span class="item_notes">{{ list.notes }}</span>
+        </li>
+    </ul>
+
+    <div class="top_line_form">
+        <div class="top_line_form">
+            <form>
+                <input type="text" ng-model="todo.name" id="todo_name" placeholder="New list item" class="input_list_name" />
+                <textarea ng-model="todo.notes" id="todo_notes" placeholder="New list item notes, links, etc." class="input_list_notes"></textarea>
+                <input type="submit" ng-click="todo-save()" value="Add it!" class="btn btn-primary input_submit" />
+                <input type="hidden" ng-model="todo.item_id" id="todo_item_id" />
+            </form>
+        </div>
+    </div>
+
+    <ul class="plain_list">
+        <li ng-repeat="todo in item.todos">
+            <form>
+                <input type="checkbox" name="check{{todo.id}}" />
+                <span class="item_header"><a href="#/todos/{{todo.id}}/edit">{{ todo.name }}</a></span>
+                <br />
+                <span class="item_notes">{{ todo.notes }}</span>
+            </form>
+        </li>
+    </ul>
+</div>

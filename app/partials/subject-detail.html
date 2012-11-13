@@ -9,17 +9,11 @@
     <p>{{subject.description}}</p>
 </div>
 
-<div class="subject">
-    <h3>Item 1</h3>
-    <p class="sub_desc">Picture</p>
-</div>
-
-<div class="subject">
-    <h3>Item 2</h3>
-    <p class="sub_desc">Document</p>
-</div>
-
-<div class="subject">
-    <h3>Item 3</h3>
-    <p class="sub_desc">To-Do List</p>
+<div class="subject" ng-repeat="item in subject.items">
+    <a href="#/items/{{item.id}}">
+        <div>
+            <h3>{{ item.name }}</h3>
+            <p class="sub_desc">{{ item.item_type }}</p>
+        </div>
+    </a>
 </div>

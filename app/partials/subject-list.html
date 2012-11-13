@@ -1,13 +1,8 @@
-<div style="margin-bottom: 25px;">
-Search:
-<input ng-model="query">
-<br/>
-Sort by:
-<select ng-model="orderProp">
-    <option value="name">Alphabetical</option>
-    <option value="date_added">Most recently added</option>
-    <option value="date_updated">Most recently updated</option>
-</select>
+<div class="top_form">
+    <form>
+        <input type="text" id="name" ng-model="subject.name" placeholder="New subject" />
+        <button id="add_subject" ng-click="save()" class="btn btn-primary">Add it!</button>
+    </form>
 </div>
 
 <div class="subject" ng-repeat="subject in subjects | filter:query | orderBy:orderProp">

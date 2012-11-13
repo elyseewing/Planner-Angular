@@ -2,10 +2,12 @@
 
 /* Services */
 
+var app = angular.module('myApp.services', ['ngResource']);
 
-angular.module('myApp.services', ['ngResource']).
-    factory('Subject', function($resource) {
-        return $resource('/subjects/:subjectId.json', {}, {
-            query: {method:'GET', params:{subjectId:'subjects'}, isArray:true}
-        });
-    });
+app.factory('Subject', function($resource) {
+    return $resource('http://myepicplanner.com/subjects/:subjectId?format=json', {});
+});
+
+app.factory('Item', function($resource) {
+    return $resource('http://myepicplanner.com/items/:itemId?format=json', {});
+});
