@@ -17,7 +17,8 @@ app.factory('Subject', function($resource) {
     return $resource('http://myepicplanner.com/subjects/:subjectId?format=json', {}, {
         'save': { method: 'POST' },
         'query' : { method: 'GET', isArray : true },
-        'update': { method: 'PUT' }
+        'update': { method: 'PUT' },
+        'delete': { method: 'DELETE' }
     });
 });
 
@@ -25,7 +26,8 @@ app.factory('Item', function($resource) {
     return $resource('http://myepicplanner.com/items/:itemId?format=json', {}, {
         'save': { method: 'POST' },
         'query' : { method: 'GET', isArray : true },
-        'update': { method: 'PUT' }
+        'update': { method: 'PUT' },
+        'delete': { method: 'DELETE' }
     });
 });
 
@@ -33,7 +35,8 @@ app.factory('List', function($resource) {
     return $resource('http://myepicplanner.com/lists/:listId?format=json', {}, {
         'save': { method: 'POST' },
         'query' : { method: 'GET', isArray : true },
-        'update': { method: 'PUT' }
+        'update': { method: 'PUT' },
+        'delete': { method: 'DELETE' }
     });
 });
 
@@ -41,6 +44,7 @@ app.factory('Todo', function($resource) {
     return $resource('http://myepicplanner.com/todos/:todoId?format=json', {}, {
         'save': { method: 'POST' },
         'query' : { method: 'GET', isArray : true },
-        'update': { method: 'PUT' }
+        'update': { method: 'PUT' },
+        'delete': { method: 'DELETE' }
     });
 });

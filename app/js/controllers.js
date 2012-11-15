@@ -79,7 +79,10 @@ function ItemDetailCtrl($scope, $routeParams, Item, List, Todo) {
     };
 
     $scope.remove = function() {
-        console.log('Removing item with ID: ' + $routeParams.itemId);
+        Item.delete({itemId: $routeParams.itemId});
+
+        $scope.subject = Subject.get({subjectId: 1});
+        window.location = "#/subjects/1";
     };
 
     $scope.print = function() {
@@ -106,7 +109,10 @@ function ListDetailCtrl($scope, $routeParams, List) {
     };
 
     $scope.remove = function() {
-        console.log('Removing list with ID: ' + $routeParams.listId);
+        List.delete({listId: $routeParams.listId});
+
+        $scope.list = List.get({listId: 1});
+        window.location = "#/items/1";
     };
 }
 
@@ -121,6 +127,9 @@ function TodoDetailCtrl($scope, $routeParams, Todo) {
     };
 
     $scope.remove = function() {
-        console.log('Removing todo with ID: ' + $routeParams.todoId);
+        Todo.delete({todoId: $routeParams.todId});
+
+        $scope.list = List.get({listId: 1});
+        window.location = "#/items/1";
     };
 }
