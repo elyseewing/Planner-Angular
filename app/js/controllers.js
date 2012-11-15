@@ -79,10 +79,11 @@ function ItemDetailCtrl($scope, $routeParams, Item, List, Todo) {
     };
 
     $scope.remove = function() {
+        var subjectId = $scope.item.subject_id;
         Item.delete({itemId: $routeParams.itemId});
 
-        $scope.subject = Subject.get({subjectId: 1});
-        window.location = "#/subjects/1";
+        $scope.subject = Subject.get({subjectId: subjectId});
+        window.location = "#/subjects/" + subjectId;
     };
 
     $scope.print = function() {
@@ -98,7 +99,7 @@ function ItemDetailCtrl($scope, $routeParams, Item, List, Todo) {
     };
 }
 
-function ListDetailCtrl($scope, $routeParams, List) {
+function ListDetailCtrl($scope, $routeParams, List, Item) {
     $scope.list = List.get({listId: $routeParams.listId});
 
     $scope.save = function() {
@@ -109,14 +110,15 @@ function ListDetailCtrl($scope, $routeParams, List) {
     };
 
     $scope.remove = function() {
+        var item = $scope.list.item.id;
         List.delete({listId: $routeParams.listId});
 
-        $scope.list = List.get({listId: 1});
-        window.location = "#/items/1";
+        $scope.item = Item.get({listId: item});
+        window.location = "#/items/" + item;
     };
 }
 
-function TodoDetailCtrl($scope, $routeParams, Todo) {
+function TodoDetailCtrl($scope, $routeParams, Todo, Item) {
     $scope.todo = Todo.get({todoId: $routeParams.todoId});
 
     $scope.save = function() {
