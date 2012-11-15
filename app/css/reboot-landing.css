@@ -657,3 +657,12 @@ h1.crumbs a {
 .item_icon_hide {
     display: none;
 }
+
+.plain_list li {
+    list-style-type: none;
+}
+.plain_list li input[type="checkbox"] {
+    margin-right: 10px;
+    position: relative;
+    top: -3px;
+}

@@ -2,12 +2,12 @@
 
 /* Controllers */
 
-function SignupCtrl($scope) {
+function SignupCtrl($scope, User) {
     $scope.breadcrumbs = new Array(
         ["Sign up", "#/signup"]
     );
     $scope.save = function() {
-        console.log('Saving user: ');
+        $scope.user = User.save($scope.user);
         console.log($scope.user);
     };
 }
@@ -24,41 +24,58 @@ function SubjectListCtrl($scope, Subject) {
     $scope.orderProp = 'name';
 
     $scope.save = function() {
-        //$scope.subject.userId = 'blah';
-        console.log('Saving subject: ');
-        console.log($scope.subject);
+        // populate user_id for new subject
+        $scope.subject.userId = 1;
+        $scope.subject = Subject.save($scope.subject);
+
+        // reload subject model to include new subject
+        $scope.items = Subject.query();
+        window.location = "#/subjects";
     };
 }
 
 function SubjectDetailCtrl($scope, $routeParams, Subject) {
     $scope.subject = Subject.get({subjectId: $routeParams.subjectId});
-    console.log($scope.subject);
 }
 
-function ItemNewCtrl($scope, $routeParams, Subject)
+function ItemNewCtrl($scope, $routeParams, Subject, Item)
 {
     $scope.subject = Subject.get({subjectId: $routeParams.subjectId});
-    console.log('Subject: ');
-    console.log($scope.subject);
+
+    $scope.uploadFiles = function(val) {
+        $scope.file = val.files[0].toString();
+    };
 
     $scope.save = function() {
+        $scope.item.file = $scope.file;
         $scope.item.subject_id = $routeParams.subjectId;
-        console.log('Saving new item: ');
-        console.log($scope.item);
+        var item = Item.save($scope.item);
+        console.log(item);
+        window.location = "#/items/" + item.id; // HOW TO GET ID OF NEW ITEM
     };
 }
 
-function ItemDetailCtrl($scope, $routeParams, Item) {
+function ItemDetailCtrl($scope, $routeParams, Item, List, Todo) {
     $scope.item = Item.get({itemId: $routeParams.itemId});
 
     $scope.addList = function() {
-        console.log('Saving new list item: ');
-        console.log($scope.list);
+        // populate item_id for new list
+        $scope.list.item_id = $routeParams.itemId;
+        $scope.list = List.save($scope.list);
+
+        // reload item model to include new list
+        $scope.item = Item.get({itemId: $routeParams.itemId});
+        window.location = "#/items/" + $routeParams.itemId;
     };
 
     $scope.addTodo = function() {
-        console.log('Saving new to-do list item: ');
-        console.log($scope.todo);
+        // populate item_id for new todo
+        $scope.todo.item_id = $routeParams.itemId;
+        $scope.todo = Todo.save($scope.todo);
+
+        // reload item model to include new todo
+        $scope.item = Item.get({itemId: $routeParams.itemId});
+        window.location = "#/items/" + $routeParams.itemId;
     };
 
     $scope.remove = function() {
@@ -70,18 +87,25 @@ function ItemDetailCtrl($scope, $routeParams, Item) {
     };
 
     $scope.save = function() {
-        console.log('Updating item: ');
-        console.log($scope.item);
+        $scope.item = Item.update($scope.item);
+
+        $scope.item = Item.get({itemId: $routeParams.itemId});
+        window.location = "#/items/" + $routeParams.itemId;
     };
 }
 
 function ListDetailCtrl($scope, $routeParams, List) {
     $scope.list = List.get({listId: $routeParams.listId});
-    console.log($scope.list);
 
     $scope.save = function() {
-        console.log('Updating list: ');
-        console.log($scope.list);
+        $scope.list = List.update($scope.list);
+
+        $scope.list = List.get({listId: $routeParams.listId});
+        window.location = "#/lists/" + $routeParams.listId + "/edit";
+    };
+
+    $scope.remove = function() {
+        console.log('Removing list with ID: ' + $routeParams.listId);
     };
 }
 
@@ -89,7 +113,13 @@ function TodoDetailCtrl($scope, $routeParams, Todo) {
     $scope.todo = Todo.get({todoId: $routeParams.todoId});
 
     $scope.save = function() {
-        console.log('Updating to-do: ');
-        console.log($scope.todo);
+        $scope.todo = Todo.update($scope.todo);
+
+        $scope.todo = Todo.get({todoId: $routeParams.todoId});
+        window.location = "#/todos/" + $routeParams.todoId + "/edit";
+    };
+
+    $scope.remove = function() {
+        console.log('Removing todo with ID: ' + $routeParams.todoId);
     };
 }

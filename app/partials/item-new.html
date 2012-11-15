@@ -47,7 +47,7 @@
                         <div class="form_field" id="files" ng-class="">
                             <label for="file"><span>Upload from your computer</span></label>
                             <div class="input">
-                                <input type="file" ng-model="item.file" id="file" />
+                                <input onchange="angular.element(this).scope().uploadFiles(this)" id="file" type="file">
                             </div>
 
                             <label for="image_url"><span>Upload from URL</span></label>

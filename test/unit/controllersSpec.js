@@ -4,6 +4,8 @@
 
 describe('Planner controllers', function() {
 
+    beforeEach(module('myApp.services'));
+
     describe('SignupCtrl', function(){
       var ctrl;
       beforeEach(function(){
@@ -44,10 +46,40 @@ describe('Planner controllers', function() {
         });
     });
 
+    describe('ItemNewCtrl', function(){
+        var ItemNewCtrl;
+        beforeEach(function(){
+            ItemNewCtrl = new ItemNewCtrl();
+        });
+        it('should ....', function() {
+            //spec body
+        });
+    });
+
     describe('ItemDetailCtrl', function(){
         var ItemDetailCtrl;
         beforeEach(function(){
             ItemDetailCtrl = new ItemDetailCtrl();
+        });
+        it('should ....', function() {
+            //spec body
+        });
+    });
+
+    describe('ListDetailCtrl', function(){
+        var ListDetailCtrl;
+        beforeEach(function(){
+            ListDetailCtrl = new ListDetailCtrl();
+        });
+        it('should ....', function() {
+            //spec body
+        });
+    });
+
+    describe('TodoDetailCtrl', function(){
+        var TodoDetailCtrl;
+        beforeEach(function(){
+            TodoDetailCtrl = new TodoDetailCtrl();
         });
         it('should ....', function() {
             //spec body
