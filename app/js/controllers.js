@@ -88,9 +88,10 @@ function ItemDetailCtrl($scope, $routeParams, Item, List, Todo) {
 
     $scope.save = function() {
         $scope.item = Item.update($scope.item);
+        console.log($scope.item);
 
         $scope.item = Item.get({itemId: $routeParams.itemId});
-        window.location = "#/items/" + $routeParams.itemId;
+        window.location = "#/items/" + $routeParams.itemId + "/edit";
     };
 }
 
