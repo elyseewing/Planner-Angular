@@ -31,6 +31,15 @@ app.factory('Item', function($resource) {
     });
 });
 
+app.factory('Print', function($resource) {
+    return $resource('http://myepicplanner.com/items/print/:itemId?format=json', {}, {
+        'save': { method: 'POST' },
+        'query' : { method: 'GET', isArray : true },
+        'update': { method: 'PUT' },
+        'delete': { method: 'DELETE' }
+    });
+});
+
 app.factory('List', function($resource) {
     return $resource('http://myepicplanner.com/lists/:listId?format=json', {}, {
         'save': { method: 'POST' },

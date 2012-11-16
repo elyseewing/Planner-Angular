@@ -87,7 +87,7 @@ function ItemDetailCtrl($scope, $routeParams, Item, List, Todo) {
     };
 
     $scope.print = function() {
-        console.log('Printing item with ID: ' + $routeParams.itemId);
+        console.log('https://s3.amazonaws.com/planner-prod/files/pdfs/' + $routeParams.itemId + '/' + $scope.item.name + '.pdf');
     };
 
     $scope.save = function() {

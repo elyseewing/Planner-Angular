@@ -26,7 +26,7 @@
                         <li class="display_inline"><a href="#/items/{{item.id}}/edit"><button class="btn btn-primary">Edit</button></a></li>
                         <li class="display_inline"><button ng-click="remove()" onclick="return confirm('Are you sure?');" class="btn btn-primary">Remove</button></li>
                         <li ng-class="{true: 'display_inline', false: 'display_none'}[item.item_type == 'Document' || item.item_type == 'Picture']"><a href="#"><button class="btn btn-primary">Download</button></a></li>
-                        <li ng-class="{true: 'display_inline', false: 'display_none'}[item.item_type == 'List' || item.item_type == 'To-Do List']"><button ng-click="print()" class="btn btn-primary">Print</button></li>
+                        <li ng-class="{true: 'display_inline', false: 'display_none'}[item.item_type == 'List' || item.item_type == 'To-Do List']"><a href="{{ 'https://s3.amazonaws.com/planner-prod/files/pdfs/' + item.id + '/' + item.name + '.pdf' }}" class="btn btn-primary">Print</a></li>
                     </ul>
 
                     <div ng-class="{true: 'item_show_block', false: 'item_show_hidden'}[item.item_type == 'List']">
